@@ -1,0 +1,26 @@
+<ng-container >
+<p>missiondetails works!</p>
+<table>
+  <thead>
+    <tr>
+      <th>Mission Name</th>
+      <th>Launch Year</th>
+      <th>Details</th>
+      <th>Mission Patch</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr {{*ngFor="let mission of missions}}">
+      <td>{{ mission.mission_name }}</td>
+      <td>{{ mission.launch_year }}</td>
+      <td>{{ mission.details }}</td>
+      <td><img src="{{ mission.links.mission_patch_small }}" alt="Mission Patch"></td>
+      <td>< routerLink="/missiondetails/{{ mission.flight_number }}">View Details</td>
+    </tr>
+  </tbody>
+</table>
+
+</ng-container>
+
+

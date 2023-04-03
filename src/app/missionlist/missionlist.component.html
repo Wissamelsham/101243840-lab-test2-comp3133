@@ -1,0 +1,21 @@
+
+<table mat-table [dataSource]="missions">
+  <ng-container matColumnDef="mission_name">
+    <th mat-header-cell *matHeaderCellDef>Mission Name</th>
+    <td mat-cell *matCellDef="let mission">{{ mission.mission_name }}</td>
+  </ng-container>
+  <ng-container matColumnDef="launch_year">
+    <th mat-header-cell *matHeaderCellDef>Launch Year</th>
+    <td mat-cell *matCellDef="let mission">{{ mission.launch_year }}</td>
+  </ng-container>
+  <ng-container matColumnDef="details">
+    <th mat-header-cell *matHeaderCellDef>Details</th>
+    <td mat-cell *matCellDef="let mission">{{ mission.details }}</td>
+  </ng-container>
+  <ng-container matColumnDef="mission_patch">
+    <th mat-header-cell *matHeaderCellDef>Mission Patch</th>
+    <td mat-cell *matCellDef="let mission"><img [src]="mission.links.mission_patch_small" alt="Mission Patch"></td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="['mission_name', 'launch_year', 'details', 'mission_patch']"></tr>
+  <tr mat-row *matRowDef="let mission; columns: ['mission_name', 'launch_year', 'details', 'mission_patch']"></tr>
+</table>
